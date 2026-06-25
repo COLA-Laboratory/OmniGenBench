@@ -740,6 +740,7 @@ class ModelHub:
         )
 
         metadata = ModelHub._load_metadata(path)
+        kwargs.setdefault("trust_remote_code", True)
         tokenizer = OmniTokenizer.from_pretrained(path, **kwargs)
 
         model = None
